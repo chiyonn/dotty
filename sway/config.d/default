@@ -9,6 +9,7 @@ set $right l
 
 # Set default terminal emulator
 set $term foot
+set $browser firefox
 
 # Application launcher
 #set $launcher fuzzel
@@ -32,6 +33,7 @@ set $term foot
 
     # Kill focused window
     bindsym $mod+q kill
+
 
     # Start your launcher
     bindsym $mod+space exec $launcher
@@ -187,7 +189,7 @@ set $term foot
     bindsym $mod+e exec thunar
 
     # Launch the browser
-    bindsym $mod+o exec brave
+    bindsym $mod+o exec $browser
 
     # Launch the clipboard manager
     bindsym $mod+Ctrl+v exec cliphist list | fuzzel -d -w 90 -l 30 -p "Select an entry to copy it to your clipboard buffer:"| cliphist decode | wl-copy
