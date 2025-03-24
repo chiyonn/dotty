@@ -17,6 +17,7 @@ exec mako
 
 # Start foot server
 exec_always --no-startup-id foot --server
+exec --no-startup-id xremap
 
 # Autotiling
 exec autotiling
@@ -39,3 +40,4 @@ exec eos-welcome --startdelay=3
 
 # nwg-drawer
 exec_always nwg-drawer -r -c 7 -is 90 -mb 10 -ml 50 -mr 50 -mt 10
+
