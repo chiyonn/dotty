@@ -23,6 +23,7 @@ set $term foot
 #
 # Basics:
 #
+    set $launcher wofi -G --show drun | xargs swaymsg exec --
     # Launch the terminal
     bindsym $mod+Return exec $term
 
@@ -34,9 +35,6 @@ set $term foot
 
     # Start your launcher
     bindsym $mod+space exec $launcher
-
-    # Menu
-    bindsym $mod+Shift+d exec $menu
 
     # Lock screen
     bindsym $mod+Escape exec gtklock
