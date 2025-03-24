@@ -11,13 +11,13 @@ set $right l
 set $term foot
 
 # Application launcher
-set $launcher fuzzel
+#set $launcher fuzzel
 
 # Application menu
-set $menu nwg-drawer
+#set $menu nwg-drawer
 
 # Power Menu
-set $powermenu ~/.config/sway/scripts/power_menu.sh
+#set $powermenu ~/.config/sway/scripts/power_menu.sh
 
 ### Key bindings
 #
@@ -27,7 +27,7 @@ set $powermenu ~/.config/sway/scripts/power_menu.sh
     bindsym $mod+Return exec $term
 
     # Open the power menu
-    bindsym $mod+Shift+e exec $powermenu
+    #bindsym $mod+Shift+e exec $powermenu
 
     # Kill focused window
     bindsym $mod+q kill
