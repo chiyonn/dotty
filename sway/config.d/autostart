@@ -1,0 +1,6 @@
+exec fcitx5 &
+exec xremap $HOME/.config/xremap/config.yaml
+
+# for screen sharing
+# require: pacman -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

@@ -1,0 +1,15 @@
+# application launch control
+
+# application valiables
+set $term foot
+set $filer thunar
+set $browser brave-browser
+set $menu wofi -G --show drun | xargs swaymsg exec --
+
+# launch keybinds
+bindsym $mod+e exec $filer
+bindsym $mod+o exec $browser
+bindsym $mod+y exec $browser --new-window "https://www.youtube.com/"
+bindsym $mod+Return exec $term
+bindsym $mod+space exec $menu
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
