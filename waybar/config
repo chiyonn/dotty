@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "bottom",
-    "modules-left": ["hyprland/workspaces", "mpd", "hyprland/window"],
+    "modules-left": ["sway/workspaces", "mpd", "sway/window"],
     "modules-right": [
         "network",
         "pulseaudio",
