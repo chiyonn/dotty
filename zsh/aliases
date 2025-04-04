@@ -1,0 +1,37 @@
+
+EDITOR=nvim
+
+alias obim="$EDITOR $HOME/Obsidian"
+alias zedit="$EDITOR $HOME/.zshrc && source $HOME/.zshrc"
+alias aliases="$EDITOR $HOME/.aliases && source $HOME/.aliases"
+
+# Basic ls commands
+alias ls='ls --color=auto'         # Colorized ls output
+alias ll='ls -lh'                  # Long listing with human-readable sizes
+alias la='ls -A'                   # List all entries except . and ..
+alias l='ls -CF'                   # Clustered view
+
+alias cp='cp -i'                   # Confirm before overwrite
+alias mv='mv -i'                   # Confirm before overwrite
+alias rm='rm -i'                   # Confirm before delete
+
+alias grep='grep --color=auto'
+alias tree='tree -C -I "node_modules|__pycache__"'
+
+alias nv="nvim"
+alias systus="systemctl status"
+alias swayconf="cd $HOME/.config/sway && $EDITOR config && swaymsg reload"
+alias hyprconf="cd $HOME/.config/hypr && $EDITOR hyprland.conf"
+alias goto="cd /mnt/dev-docker && cd"
+
+# for Python
+alias activate="source ./.venv/bin/activate"
+
+# for Git
+alias gst="git status"
+alias gad="git add ."
+alias push="git push"
+alias commit="git commit -m"
+
+# for Docker
+alias compose="docker compose"
