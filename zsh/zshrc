@@ -84,6 +84,3 @@ if [ -f '/home/chiyonn/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/chi
 export PATH="$PATH:/home/chiyonn/.local/bin"
 
 if [ -e /home/chiyonn/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chiyonn/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-. ~/.nix-profile/etc/profile.d/nix.sh
-
