@@ -19,19 +19,15 @@ HISTSIZE=5000
 SAVEHIST=10000
 
 ### Git
-GIT_PROMPT_SCRIPTFILE=$HOME/.zsh/git-prompt.sh
-if [ -f "$GIT_PROMPT_SCRIPTFILE" ]; then
-    source "$GIT_PROMPT_SCRIPTFILE"
-fi
+autoload -Uz vcs_info
+precmd() { vcs_info }
 
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM=auto
+zstyle ':vcs_info:git:*' formats '(%b)'
+zstyle ':vcs_info:*' enable git
 
 setopt PROMPT_SUBST
 
-PS1=' 👻%F{white}%n%F{grey}@%m%f:%F{blue}%~%f %F{yellow}$(__git_ps1 "(%s)")%f%F{green}%%%f '
+PS1=' 👻%F{white}%n%F{grey}@%m%f:%F{blue}%~%f %F{yellow}${vcs_info_msg_0_}%f%F{green}%%%f '
 RPS1='%F{cyan}[%*]%f'
 
 # Completion
