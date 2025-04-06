@@ -6,7 +6,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
 # display placement
-output eDP-1 scale 1.5
+output eDP-1 scale 1.0
 output eDP-1 pos 0 720 res 2560x1440
 output HDMI-A-1 scale 1.0
 output HDMI-A-1 pos 2560 0 res 3840x2160
