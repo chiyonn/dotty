@@ -20,7 +20,7 @@ alias tree='tree -C -I "node_modules|__pycache__"'
 
 alias nv="nvim"
 alias systus="systemctl status"
-alias swayconf="cd $HOME/.config/sway && $EDITOR config && swaymsg reload"
+alias swayconf="cd $HOME/.config/sway && $EDITOR config"
 alias hyprconf="cd $HOME/.config/hypr && $EDITOR hyprland.conf"
 alias goto="cd /mnt/dev-docker && cd"
 
