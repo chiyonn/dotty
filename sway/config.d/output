@@ -10,14 +10,3 @@ output eDP-1 scale 1.0
 output eDP-1 pos 3840 720 res 2560x1440
 output HDMI-A-1 scale 1.0
 output HDMI-A-1 pos 0 0 res 3840x2160
-
-mode "resize" {
-    bindsym $left resize shrink width 80px
-    bindsym $down resize grow height 80px
-    bindsym $up resize shrink height 80px
-    bindsym $right resize grow width 80px
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
