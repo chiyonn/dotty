@@ -2,6 +2,7 @@
 
 ### common valiables
 set $mod Mod1
+set $sub Mod4
 
 set $left h
 set $down j
@@ -14,6 +15,12 @@ floating_modifier $mod normal
 
 # keybinds
 bindsym $mod+q kill
+
+# wtype required
+bindsym $sub+h exec wtype -k Left
+bindsym $sub+j exec wtype -k Down
+bindsym $sub+k exec wtype -k Up
+bindsym $sub+l exec wtype -k Right
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
