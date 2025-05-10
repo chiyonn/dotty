@@ -8,6 +8,7 @@ set $menu wofi -G --show drun | xargs swaymsg exec --
 
 # launch keybinds
 bindsym $mod+b exec blueman-manager
+bindsym $mod+d exec $HOME/.config/sway/scripts/toggle_display_menu.sh
 bindsym $mod+e exec $filer
 bindsym $mod+o exec $browser
 bindsym $mod+y exec $browser --new-window "https://www.youtube.com/"
