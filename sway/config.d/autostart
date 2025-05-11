@@ -1,6 +1,11 @@
+# for input method
+# required: fcitx5, mozc
 exec fcitx5 &
+
+# for keymap
+# required: xremap
 exec xremap $HOME/.config/xremap/config.yaml
 
-# for screen sharing
-# require: pacman -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr
+# for screen sharing: 
+# require(arch): pacman -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
