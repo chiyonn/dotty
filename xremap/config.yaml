@@ -1,9 +1,17 @@
 modmap:
-    - name: "ThinkPad Keyboard"
-      device:
-        only: "AT Translated Set 2 keyboard"
-      remap:
-          KEY_CAPSLOCK: KEY_LEFTCTRL
-          KEY_RIGHTSHIFT: KEY_BACKSPACE
-          KEY_BACKSPACE: KEY_BACKSLASH
-          KEY_BACKSLASH: KEY_BACKSPACE
+  - name: "ThinkPad Keyboard"
+    device:
+      only: "AT Translated Set 2 keyboard"
+    remap:
+      KEY_CAPSLOCK: KEY_LEFTCTRL
+      KEY_RIGHTSHIFT: KEY_BACKSPACE
+      KEY_BACKSPACE: KEY_BACKSLASH
+      KEY_BACKSLASH: KEY_BACKSPACE
+
+keymap:
+  - name: "Map Win + hjkl to arrow keys"
+    remap:
+      Super-h: left
+      Super-j: down
+      Super-k: up
+      Super-l: right

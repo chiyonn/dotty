@@ -71,12 +71,6 @@
     bindsym $mod+minus scratchpad show
     bindsym $mod+Shift+minus move scratchpad
 
-# wtype required
-    bindsym $sub+h exec wtype -k Left
-    bindsym $sub+j exec wtype -k Down
-    bindsym $sub+k exec wtype -k Up
-    bindsym $sub+l exec wtype -k Right
-
 # function keys
     bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym XF86MonBrightnessUp exec brightnessctl set +5%
