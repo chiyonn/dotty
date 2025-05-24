@@ -1,12 +1,13 @@
+watch: true
 modmap:
   - name: "ThinkPad Keyboard"
     device:
       only: "AT Translated Set 2 keyboard"
     remap:
-      KEY_CAPSLOCK: KEY_LEFTCTRL
-      KEY_RIGHTSHIFT: KEY_BACKSPACE
-      KEY_BACKSPACE: KEY_BACKSLASH
-      KEY_BACKSLASH: KEY_BACKSPACE
+      capslock: leftctrl
+      rightshift: backspace
+      backspace: backslash
+      backslash: backspace
 
 keymap:
   - name: "Map Win + hjkl to arrow keys"
