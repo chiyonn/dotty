@@ -1,4 +1,3 @@
-watch: true
 modmap:
   - name: "ThinkPad Keyboard"
     device:
