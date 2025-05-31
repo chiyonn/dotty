@@ -4,7 +4,7 @@ After=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/xremap /home/chiyonn/.config/xremap/config.yaml --watch=config,device
+ExecStart=/usr/bin/xremap /home/chiyonn/.config/xremap/config.yaml
 Restart=always
 RestartSec=5
 
