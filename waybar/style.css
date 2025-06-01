@@ -1,19 +1,22 @@
 * {
-  font-family: "Hack Nerd Font", "Font Awesome 6 Free Solid",
-    "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular";
-  font-size: 16px;
+    font-family: monospace;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+window#waybar {
+    background: #000000;
+    border: none;
+    padding: 0;
 }
 
 /*
-            Colors      Bright Colors
-Black		#0F2130		#B0B3B9
-Red		    #D22613		#F96795
-Green		#7CDE53		#A0F2A0
-Yellow	    #EBE645		#F4EF82
-Blue		#2C9ADE		#A3FEFE
-Magenta	    #FFA705		#F1B356 (magenta == orange now)
-Cyan		#8A95A7		#B0C3DA
-White		#F8F8F8		#FFFFFF
+white   #ffffff (255,255,255)
+blue    #4285f4	(66,133,244)
+red     #ea4335	(234,67,53)
+yellow  #fbbc05	(251,188,5)
+green   #34a853	(52,168,83)
+purple  #673ab7	(103,58,183)
 */
 
 #window,
@@ -27,39 +30,52 @@ White		#F8F8F8		#FFFFFF
 #disk,
 #battery,
 #clock {
-  margin-left: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #f8f8f8;
-  border-radius: 4px;
-  transition: none;
+    padding: 4px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
 }
 
+/* Workspaces */
 #workspaces button {
-  color: #f8f8f8;
-  border-radius: 4px;
+    border: none;
+    margin: 0;
+    border-radius: 0;
 }
 
-#workspaces button.active {
-  color: #ffffff;
+#workspaces button.focused {
+    background: #222222;
 }
 
-#workspaces button:hover {
-  color: rgba(0, 255, 255, 1);
+#battery.charging {
+    color: #4285f4;
 }
 
-window#waybar {
-  background: rgba(0, 0, 0, 0);
+#temperature.cold {
+    color: #4285f4;
 }
 
+/* Normal status */
+#battery:not(.charging):not(.warning):not(.critical),
+#temperature {
+    color: #34a853;
+}
+
+/* Warning states */
+#temperature.warning,
+#battery.warning {
+    color: #fbbc05;
+}
+
+/* Critical states */
 #battery.critical,
 #temperature.critical {
-  animation: blink-critical 1s steps(2, start) infinite;
-  background: #d22613;
+    color: #ea4335;
 }
 
+/* Optional: blink for critical status (can be removed for more minimal look) */
 @keyframes blink-critical {
-  50% {
-    opacity: 0.7;
-  }
+    50% {
+        opacity: 0.5;
+    }
 }
