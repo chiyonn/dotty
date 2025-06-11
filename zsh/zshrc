@@ -44,3 +44,11 @@ fi
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
     exec sway
 fi
+
+# Open in tmux session (must be last)
+if command -v tmux >/dev/null 2>&1; then
+  if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+  fi
+fi
+
