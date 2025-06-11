@@ -28,10 +28,10 @@
     #       $mod+z none
 
     bindsym $mod+Return exec $term
-    bindsym $mod+space exec $menu
+    bindsym $mod+space scratchpad show
 
-    bindsym $mod+Shift+space floating toggle
     bindsym $mod+Shift+f focus mode_toggle
+    bindsym $mod+Shift+space floating toggle
 
 # $mod+Shift+[a-z] keybindings
     #       $mod+Shift+a none
@@ -68,7 +68,7 @@
 # -> see config.d/workspace
 
 # scratchpad
-    bindsym $mod+minus scratchpad show
+    bindsym $mod+minus exec $menu
     bindsym $mod+Shift+minus move scratchpad
 
 # function keys
