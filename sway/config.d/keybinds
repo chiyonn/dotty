@@ -12,10 +12,9 @@
     #       $mod+k binded to window focus up
     #       $mod+l binded to window focus right
     #       $mod+m binded to music mode
-    #       $mod+n none
+    #       $mod+n binded to move to next workspace
     bindsym $mod+o exec $browser
-    #       $mod+n none
-    #       $mod+p none
+    #       $mod+p binded to move to previous workspace
     bindsym $mod+q kill
     #       $mod+r none
     #       $mod+s none

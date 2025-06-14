@@ -21,5 +21,5 @@
     bindsym $mod+Shift+0 move container to workspace number 10
 
     bindsym $mod+Tab workspace back_and_forth
-    bindsym $mod+bracketleft workspace prev_on_output
-    bindsym $mod+bracketright workspace next_on_output
+    bindsym $mod+p workspace prev_on_output
+    bindsym $mod+n workspace next_on_output
