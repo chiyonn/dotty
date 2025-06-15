@@ -10,7 +10,7 @@ set $right l
 # apps
 set $term foot
 set $filer thunar
-set $browser brave-browser
+set $browser chromium-browser
 set $menu wofi -G --show drun | xargs swaymsg exec --
 
 ### window control
