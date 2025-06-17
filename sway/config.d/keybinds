@@ -4,7 +4,7 @@
     #       $mod+c none
     bindsym $mod+d exec $HOME/.config/sway/scripts/toggle_display_menu.sh
     bindsym $mod+e exec $filer
-    #       $mod+f none
+    bindsym $mod+f exec fullscreen
     #       $mod+g none
     #       $mod+h binded to window focus left
     #       $mod+i none
@@ -29,7 +29,6 @@
     bindsym $mod+Return exec $term
     bindsym $mod+space scratchpad show
 
-    bindsym $mod+Shift+f fullscreen
     bindsym $mod+Shift+space floating toggle
 
 # $mod+Shift+[a-z] keybindings
