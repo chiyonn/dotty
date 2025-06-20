@@ -18,11 +18,14 @@ alias rm='rm -i'                   # Confirm before delete
 alias grep='grep --color=auto'
 alias tree='tree -C -I "node_modules|__pycache__"'
 
-alias nv="nvim"
-alias systus="systemctl status"
-alias swayconf="cd $HOME/.config/sway && $EDITOR config"
-alias hyprconf="cd $HOME/.config/hypr && $EDITOR hyprland.conf"
+alias claude-local="claude-bridge openai qwen3:32b --baseURL http://llm.voxon.lan:11434/v1 --apiKey none"
 alias goto="cd /mnt/dev-docker && cd"
+alias hyprconf="cd $HOME/.config/hypr && $EDITOR hyprland.conf"
+alias nv="nvim"
+alias silverbullet="cd /mnt/silverbullet && $EDITOR index.md"
+alias swayconf="cd $HOME/.config/sway && $EDITOR config"
+alias systus="systemctl status"
+alias t="tmux"
 
 # for Python
 alias activate="source ./.venv/bin/activate"
@@ -36,3 +39,5 @@ alias gmt="git commit -m"
 
 # for Docker
 alias compose="docker compose"
+
+
