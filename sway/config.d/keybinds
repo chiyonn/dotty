@@ -4,7 +4,7 @@
     #       $mod+c none
     bindsym $mod+d exec $HOME/.config/sway/scripts/toggle_display_menu.sh
     bindsym $mod+e exec $filer
-    bindsym $mod+f exec fullscreen
+    bindsym $mod+f fullscreen
     #       $mod+g none
     #       $mod+h binded to window focus left
     #       $mod+i none
