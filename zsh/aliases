@@ -10,7 +10,7 @@ alias ls='ls --color=auto'         # Colorized ls output
 alias ll='ls -lh'                  # Long listing with human-readable sizes
 alias la='ls -A'                   # List all entries except . and ..
 alias l='ls -CF'                   # Clustered view
-alias lla='ls'
+alias lla='ls -lha'
 
 alias cp='cp -i'                   # Confirm before overwrite
 alias mv='mv -i'                   # Confirm before overwrite
