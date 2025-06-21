@@ -10,6 +10,7 @@ alias ls='ls --color=auto'         # Colorized ls output
 alias ll='ls -lh'                  # Long listing with human-readable sizes
 alias la='ls -A'                   # List all entries except . and ..
 alias l='ls -CF'                   # Clustered view
+alias lla='ls'
 
 alias cp='cp -i'                   # Confirm before overwrite
 alias mv='mv -i'                   # Confirm before overwrite
@@ -26,6 +27,7 @@ alias silverbullet="cd /mnt/silverbullet && $EDITOR index.md"
 alias swayconf="cd $HOME/.config/sway && $EDITOR config"
 alias systus="systemctl status"
 alias t="tmux"
+alias tnew="tmux new-session -s"
 
 # for Python
 alias activate="source ./.venv/bin/activate"
