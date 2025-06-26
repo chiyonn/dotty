@@ -28,8 +28,7 @@
 
     bindsym $mod+Return exec $term
     bindsym $mod+space scratchpad show
-
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+minus exec $menu
 
 # $mod+Shift+[a-z] keybindings
     #       $mod+Shift+a none
@@ -59,15 +58,14 @@
     #       $mod+Shift+y none
     #       $mod+Shift+z none
 
+    bindsym $mod+Shift+minus floating toggle
+    bindsym $mod+Shift+space move scratchpad
+
 # $mod+[0-9] keybindings
 # -> see config.d/workspace
 
 # $mod+Shift+[0-9] keybindings
 # -> see config.d/workspace
-
-# scratchpad
-    bindsym $mod+minus exec $menu
-    bindsym $mod+Shift+minus move scratchpad
 
 # function keys
     bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
