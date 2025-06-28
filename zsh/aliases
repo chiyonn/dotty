@@ -33,11 +33,11 @@ alias tnew="tmux new-session -s"
 alias activate="source ./.venv/bin/activate"
 
 # for Git
-alias gst="git status"
-alias gad="git add"
-alias gdf="git diff"
-alias gsh="git push"
-alias gmt="git commit -m"
+alias gs="git status"
+alias ga="git add"
+alias gd="git diff"
+alias gp="git push"
+alias gc="git commit -m"
 
 # for Docker
 alias compose="docker compose"
