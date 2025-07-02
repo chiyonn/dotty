@@ -11,7 +11,7 @@ set $right l
 set $term foot
 set $filer thunar
 set $browser brave-browser
-set $menu wofi -G --show run | grep -v '^$' | xargs swaymsg exec --
+set $menu wofi -G --show drun | grep -v '^$' | xargs swaymsg exec --
 
 ### window control
 floating_modifier $mod normal
