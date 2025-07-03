@@ -2,7 +2,6 @@ modmap:
   - name: "ThinkPad Keyboard"
     device:
       only: "AT Translated Set 2 keyboard"
-    grab: false
     remap:
       capslock: leftctrl
       rightshift: backspace
