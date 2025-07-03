@@ -20,7 +20,6 @@ alias grep='grep --color=auto'
 alias tree='tree -C -I "node_modules|__pycache__"'
 
 alias claude-local="claude-bridge openai qwen3:32b --baseURL http://llm.voxon.lan:11434/v1 --apiKey none"
-alias goto="cd /mnt/dev-docker && cd"
 alias hyprconf="cd $HOME/.config/hypr && $EDITOR hyprland.conf"
 alias nv="nvim"
 alias silverbullet="cd /mnt/silverbullet && $EDITOR index.md"
