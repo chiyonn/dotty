@@ -38,6 +38,7 @@ alias ga="git add"
 alias gd="git diff"
 alias gp="git push"
 alias gc="git commit -m"
+alias gl="git log"
 
 # for Docker
 alias compose="docker compose"
