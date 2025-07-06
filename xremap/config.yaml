@@ -8,6 +8,15 @@ modmap:
       backspace: backslash
       backslash: backspace
 
+  - name: "MD-770 Keyboard"
+    device:
+      only: "USB-HID Keyboard"
+    remap:
+      capslock: leftctrl
+      rightshift: backspace
+      backspace: backslash
+      backslash: backspace
+
 keymap:
   - name: "Map Win + hjkl to arrow keys"
     remap:
