@@ -14,7 +14,12 @@
       "styleViaASS": false,
       "styleViaXhr": false,
       "urlInstaller": true,
-      "windowPosition": {},
+      "windowPosition": {
+        "height": 2108,
+        "left": 3844,
+        "top": 46,
+        "width": 1272
+      },
       "compactWidth": 850,
       "config.autosave": true,
       "schemeSwitcher.enabled": "dark",
@@ -51,7 +56,7 @@
       "editor.lineWrapping": true,
       "editor.smartIndent": true,
       "editor.indentWithTabs": false,
-      "editor.tabSize": 4,
+      "editor.tabSize": 2,
       "editor.keyMap": "default",
       "editor.theme": "default",
       "editor.beautify": {
@@ -95,9 +100,9 @@
       "iconset": 0,
       "badgeDisabled": "#8B0000",
       "badgeNormal": "#006666",
-      "headerWidth.edit": 280,
-      "headerWidth.install": 280,
-      "headerWidth.manage": 280,
+      "headerWidth.edit": 311,
+      "headerWidth.install": 311,
+      "headerWidth.manage": 311,
       "popup.search.globals": false,
       "popupWidth": 246,
       "popupWidthMax": 280,
@@ -115,15 +120,16 @@
     "name": "yay.space",
     "sections": [
       {
-        "code": ":root {\n    --c-border: rgba(100, 100, 100, .5);\n}\n\n* {\n    color: rgb(220, 220, 220) !important;\n}\n\n.Main__content {\n    background: rgb(20, 20, 20);\n}\n.Header,\n.Box,\n.PostBox__wrapper {\n    background: rgb(40, 40, 40);\n}\n\n#search_input {\n    background: rgba(255, 255, 255, .1);\n}\n\n.AppDownloadAds.Sidebar__ads,\n.AnnouncementBanner,\n.Heart__circle,\n.Heart__circle2 {\n    display: none;\n}\n\n.PostActions__a--reply,\n.PostActions__a--reposts {\n  filter: invert(100%);\n  -webkit-filter: invert(100%);\n}\n",
+        "code": ":root {\n  --c-border: rgba(100, 100, 100, .5);\n}\n\n.Main__content * {\n  color: rgb(220, 220, 220);\n}\n\n.Main__content {\n  background: rgb(20, 20, 20);\n}\n.Header,\n.Box,\n.PostBox__wrapper {\n  background: rgb(40, 40, 40);\n}\n\n#search_input {\n  background: rgba(255, 255, 255, .1);\n}\n\n.AppDownloadAds.Sidebar__ads,\n.AnnouncementBanner,\n.Heart__circle,\n.Heart__circle2 {\n  display: none;\n}\n\n.PostActions__a--reply,\n.PostActions__a--reposts {\n  filter: invert(100%);\n  -webkit-filter: invert(100%);\n}",
         "urlPrefixes": [
           "https://yay.space"
         ]
       }
     ],
-    "updateDate": 1751843092266,
+    "updateDate": 1751844691715,
     "_id": "1f5a426b-57dd-497c-a75c-873728dc244f",
-    "_rev": 1751843092267,
-    "id": 1
+    "_rev": 1751844691715,
+    "id": 1,
+    "preferScheme": "dark"
   }
 ]
