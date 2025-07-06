@@ -1,4 +1,10 @@
 modmap:
+  - name: "HHKB-Hybrid_1 Keyboard"
+    device:
+      only: "HHKB-Hybrid_1 Keyboard"
+    remap:
+      rightshift: backspace
+
   - name: "ThinkPad Keyboard"
     device:
       only: "AT Translated Set 2 keyboard"
