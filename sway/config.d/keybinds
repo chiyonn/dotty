@@ -1,6 +1,6 @@
 # $mod+[a-z] keybindings
-    #       $mod+a none
-    bindsym $mod+b [app_id="blueman-manager"] scratchpad show
+    bindsym $mod+a [app_id="blueman-manager"] scratchpad show
+    #       $mod+b none
     #       $mod+c none
     bindsym $mod+d exec $HOME/.config/sway/scripts/toggle_display_menu.sh
     bindsym $mod+e exec $filer
