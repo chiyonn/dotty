@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SESSION_NAME="${1:-default}"
+SESSION_NAME="${1:-home}"
 
 if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
   tmux attach -t "$SESSION_NAME"
