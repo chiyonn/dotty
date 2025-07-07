@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "modules-left": ["sway/workspaces", "mpd", "sway/window"],
     "modules-right": [
         "network",
