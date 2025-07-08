@@ -7,30 +7,29 @@ if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
   exit 0
 fi
 
-# 新しいセッションをデタッチ状態で開始（最初のペイン: 左上）
+# セッションをデタッチ状態で新規作成
 tmux new-session -d -s "$SESSION_NAME"
 
-# 左上を選択（初期ペイン）
-tmux select-pane -t "$SESSION_NAME:0.0"
-
-# 左下を作成（上下分割）
-tmux split-window -v -t "$SESSION_NAME:0.0"
-
-# 左下（下側）で htop 実行
-tmux send-keys -t "$SESSION_NAME:0.1" 'htop' C-m
-
-# 左ペイン（上下分割された2ペイン）を横に分割して右側（nvim用）を作成
-tmux select-pane -t "$SESSION_NAME:0.0"
+# 左右分割（初期ペインは0）
 tmux split-window -h -t "$SESSION_NAME:0.0"
 
-# 右側で nvim 実行
-tmux send-keys -t "$SESSION_NAME:0.2" 'nvim' C-m
+# 右ペイン（1）を選択
+tmux select-pane -t "$SESSION_NAME:0.1"
 
-# 左上にフォーカスを戻す
+# nvim 実行
+tmux send-keys -t "$SESSION_NAME:0.1" 'nvim' C-m
+
+# 右ペインを上下に分割（nvimの下にhtop用のペインを作る）
+tmux split-window -v -t "$SESSION_NAME:0.1"
+
+# htop 実行（新しくできたペインは自動的にアクティブ＝ペイン2）
+tmux send-keys -t "$SESSION_NAME:0.2" 'htop' C-m
+
+# 左ペイン（0）を選択
 tmux select-pane -t "$SESSION_NAME:0.0"
 
-# ウィンドウ名を変更
+# ウィンドウ名を変更（任意）
 tmux rename-window -t "$SESSION_NAME:0" "dashboard"
 
-# セッションにアタッチ
+# アタッチ
 tmux attach -t "$SESSION_NAME"
