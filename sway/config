@@ -9,7 +9,7 @@ set $right l
 
 # apps
 set $term foot
-set $filer thunar
+set $filer nautilus
 set $browser brave-browser
 set $menu wofi -G --show drun | grep -v '^$' | xargs swaymsg exec --
 
