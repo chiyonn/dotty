@@ -1,5 +1,5 @@
 # $mod+[a-z] keybindings
-    bindsym $mod+a exec $HOME/.config/sway/scripts/toggle_display_menu.sh
+    bindsym $mod+a exec $HOME/.config/sway/scripts/bluetooth_switch.sh
     #       $mod+b none
     #       $mod+c none
     bindsym $mod+d [class="discord"] scratchpad show
