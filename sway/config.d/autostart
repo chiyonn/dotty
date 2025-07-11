@@ -5,6 +5,7 @@ exec fcitx5 &
 # for keymap
 # required: xremap
 exec xremap $HOME/.config/xremap/config.yaml
+exec flatpak run com.discordapp.Discord
 
 # for screen sharing: 
 # require(arch): pacman -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr

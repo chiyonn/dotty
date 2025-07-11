@@ -1,8 +1,8 @@
 # $mod+[a-z] keybindings
-    bindsym $mod+a [app_id="blueman-manager"] scratchpad show
+    bindsym $mod+a exec $HOME/.config/sway/scripts/toggle_display_menu.sh
     #       $mod+b none
     #       $mod+c none
-    bindsym $mod+d exec $HOME/.config/sway/scripts/bluetooth_switch.sh
+    bindsym $mod+d [class="discord"] scratchpad show
     bindsym $mod+e exec $filer
     bindsym $mod+f fullscreen
     #       $mod+g none
