@@ -1,10 +1,6 @@
 # for input method
 # required: fcitx5, mozc
 exec fcitx5 &
-
-# for keymap
-# required: xremap
-exec xremap $HOME/.config/xremap/config.yaml
 exec flatpak run com.discordapp.Discord
 
 # for screen sharing: 
