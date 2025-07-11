@@ -21,7 +21,7 @@ alias tree='tree -C -I "node_modules|__pycache__|undodir"'
 
 alias claude-local="claude-bridge openai qwen3:32b --baseURL http://llm.voxon.lan:11434/v1 --apiKey none"
 alias hyprconf="cd $HOME/.config/hypr && $EDITOR hyprland.conf"
-alias nv="nvim"
+alias v="nvim"
 alias silverbullet="cd /mnt/silverbullet && $EDITOR index.md"
 alias swayconf="cd $HOME/.config/sway && $EDITOR config"
 alias systus="systemctl status"
