@@ -19,7 +19,7 @@
     #       $mod+r none
     #       $mod+s none
     #       $mod+t none
-    #       $mod+u none
+    bindsym $mod+u exec $browser --new-window "https://chatgpt.com/?temporary-chat=true"
     bindsym $mod+v split toggle
     #       $mod+w none
     #       $mod+x none
@@ -29,7 +29,7 @@
     bindsym $mod+Return exec $term
     bindsym $mod+space [app_id="foot"] scratchpad show
     bindsym $mod+slash exec $menu
-    bindsym $mod+minus scratchpad show
+    bindsym $mod+minus exec scratchpad show
 
 # $mod+Shift+[a-z] keybindings
     #       $mod+Shift+a none
