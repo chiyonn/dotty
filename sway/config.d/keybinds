@@ -29,6 +29,7 @@
     bindsym $mod+Return exec $term
     bindsym $mod+space [app_id="foot"] scratchpad show
     bindsym $mod+slash exec $menu
+    bindsym $mod+minus scratchpad show
 
 # $mod+Shift+[a-z] keybindings
     #       $mod+Shift+a none
