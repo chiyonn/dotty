@@ -1,12 +1,14 @@
 [Unit]
 Description=Launch xremap daemon
 After=graphical-session.target
+PartOf=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/xremap /home/chiyonn/.config/xremap/config.yaml
+ExecStart=/usr/bin/xremap --watch /home/chiyonn/.config/xremap/config.yaml
 Restart=always
-RestartSec=5
+RestartSec=2
+Environment=RUST_LOG=debug
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target

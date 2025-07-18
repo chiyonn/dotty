@@ -1,32 +1,21 @@
 modmap:
-  - name: "HHKB-Hybrid_1 Keyboard"
-    device:
-      only: "HHKB-Hybrid_1 Keyboard"
+  - name: HHKB
+    device: { only: ["HHKB-Hybrid_1 Keyboard"] }
     remap:
       rightshift: backspace
 
-  - name: "ThinkPad Keyboard"
-    device:
-      only: "AT Translated Set 2 keyboard"
+  - name: ThinkPad
+    device: { only: ["AT Translated Set 2 keyboard"] }
     remap:
       capslock: leftctrl
       rightshift: backspace
       backspace: backslash
       backslash: backspace
 
-  - name: "MD-770 Keyboard"
-    device:
-      only: "USB-HID Keyboard"
+  - name: MD770
+    device: { only: ["USB-HID Keyboard"] }   # ← event5/9 と一致する名前だけ
     remap:
       capslock: leftctrl
       rightshift: backspace
       backspace: backslash
       backslash: backspace
-
-keymap:
-  - name: "Map Win + hjkl to arrow keys"
-    remap:
-      Super-h: left
-      Super-j: down
-      Super-k: up
-      Super-l: right
