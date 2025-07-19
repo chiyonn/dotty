@@ -13,9 +13,17 @@ modmap:
       backslash: backspace
 
   - name: MD770
-    device: { only: ["USB-HID Keyboard"] }   # ← event5/9 と一致する名前だけ
+    device: { only: ["USB-HID Keyboard"] }
     remap:
       capslock: leftctrl
       rightshift: backspace
       backspace: backslash
       backslash: backspace
+
+keymap:
+  - name: "Map Win + hjkl to arrow keys"
+    remap:
+      Super-h: left
+      Super-j: down
+      Super-k: up
+      Super-l: right
