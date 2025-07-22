@@ -103,8 +103,108 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+BackSpace exec i3lock -c 000000
 
-
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+mode "$mode_audio" {
+  bindsym n exec
+}
+
+mode "music" {
+    bindsym n exec playerctl next
+    bindsym p exec playerctl previous
+    bindsym space exec playerctl play-pause
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+m mode "default"
+}
+bindsym $mod+m mode "music"
+
+
+
+### bar
+bar {
+    status_command i3blocks
+
+    colors {
+        background #1d2021
+        statusline #ebdbb2
+        separator  #665c54
+
+        focused_workspace  #458588 #83a598 #1d2021
+        active_workspace   #504945 #fabd2f #1d2021
+        inactive_workspace #3c3836 #928374 #1d2021
+        urgent_workspace   #cc241d #fb4934 #1d2021
+    }
+
+    font pango:Hack Nerd Font Mono 8
+}
+
+
+
+### Colors
+set $dark0        #282828
+set $dark0_soft   #32302f
+set $dark1        #3c3836
+set $dark2        #504945
+set $dark3        #665c54
+set $dark4        #7c6f64
+
+set $gray_245     #928374
+
+set $light0       #fbf1c7
+set $light1       #ebdbb2
+set $light4       #a89984
+
+set $bright_red     #fb4934
+set $bright_green   #b8bb26
+set $bright_yellow  #fabd2f
+set $bright_blue    #83a598
+set $bright_purple  #d3869b
+set $bright_aqua    #8ec07c
+set $bright_orange  #fe8019
+
+set $neutral_red    #cc241d
+set $neutral_green  #98971a
+set $neutral_yellow #d79921
+set $neutral_blue   #458588
+set $neutral_purple #b16286
+set $neutral_aqua   #689d6a
+set $neutral_orange #d65d0e
+
+#                border         background     text          indicator       child_border
+client.focused          $bright_green   $dark0        $light1       $neutral_yellow  $dark0
+client.focused_inactive $dark2          $dark0        $light4       $dark4           $dark0
+client.unfocused        $gray_245       $dark0        $light4       $dark4           $dark0
+client.urgent           $neutral_red    $dark0        $light1       $neutral_red     $dark0
+client.placeholder      $dark0          $dark0        $light1       $dark0           $dark0
+
+
+
+### AutoStarts
+exec --no-startup-id dex --autostart --environment i3
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# transparent and more
+exec --no-startup-id picom --config ~/.config/picom.conf
+
+# wallpaper
+#exec --no-startup-id feh --bg-scale /path/to/image.jpg
+
+# terminal
+for_window [class="Alacritty"] move to scratchpad, scratchpad show
+exec --no-startup-id alacritty
+
