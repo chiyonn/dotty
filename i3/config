@@ -144,44 +144,27 @@ bar {
 }
 
 
+### Colors (Carbonfox)
+set $black        #161616
+set $dark_gray    #262626
+set $gray         #393939
+set $light_gray   #6e6e6e
+set $white        #e0e0e0
 
-### Colors
-set $dark0        #282828
-set $dark0_soft   #32302f
-set $dark1        #3c3836
-set $dark2        #504945
-set $dark3        #665c54
-set $dark4        #7c6f64
+set $red          #ee5396
+set $green        #42be65
+set $yellow       #f1c21b
+set $blue         #33b1ff
+set $magenta      #be95ff
+set $cyan         #3ddbd9
+set $orange       #ff832b
 
-set $gray_245     #928374
-
-set $light0       #fbf1c7
-set $light1       #ebdbb2
-set $light4       #a89984
-
-set $bright_red     #fb4934
-set $bright_green   #b8bb26
-set $bright_yellow  #fabd2f
-set $bright_blue    #83a598
-set $bright_purple  #d3869b
-set $bright_aqua    #8ec07c
-set $bright_orange  #fe8019
-
-set $neutral_red    #cc241d
-set $neutral_green  #98971a
-set $neutral_yellow #d79921
-set $neutral_blue   #458588
-set $neutral_purple #b16286
-set $neutral_aqua   #689d6a
-set $neutral_orange #d65d0e
-
-#                border         background     text          indicator       child_border
-client.focused          $bright_green   $dark0        $light1       $neutral_yellow  $dark0
-client.focused_inactive $dark2          $dark0        $light4       $dark4           $dark0
-client.unfocused        $gray_245       $dark0        $light4       $dark4           $dark0
-client.urgent           $neutral_red    $dark0        $light1       $neutral_red     $dark0
-client.placeholder      $dark0          $dark0        $light1       $dark0           $dark0
-
+#                       border     background foreground  indicator   child_border
+client.focused          $blue      $black     $white      $cyan       $black
+client.focused_inactive $gray      $black     $light_gray $gray       $black
+client.unfocused        $dark_gray $black     $light_gray $gray       $black
+client.urgent           $red       $black     $white      $red        $black
+client.placeholder      $black     $black     $white      $black      $black
 
 
 ### AutoStarts
