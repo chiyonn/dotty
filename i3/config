@@ -124,26 +124,6 @@ mode "music" {
 bindsym $mod+m mode "music"
 
 
-
-### bar
-bar {
-    status_command i3blocks
-
-    colors {
-        background #1d2021
-        statusline #ebdbb2
-        separator  #665c54
-
-        focused_workspace  #458588 #83a598 #1d2021
-        active_workspace   #504945 #fabd2f #1d2021
-        inactive_workspace #3c3836 #928374 #1d2021
-        urgent_workspace   #cc241d #fb4934 #1d2021
-    }
-
-    font pango:Hack Nerd Font Mono 8
-}
-
-
 ### Colors (Carbonfox)
 set $black        #161616
 set $dark_gray    #262626
@@ -159,12 +139,31 @@ set $magenta      #be95ff
 set $cyan         #3ddbd9
 set $orange       #ff832b
 
+### i3 Client Borders
 #                       border     background foreground  indicator   child_border
 client.focused          $blue      $black     $white      $cyan       $black
 client.focused_inactive $gray      $black     $light_gray $gray       $black
 client.unfocused        $dark_gray $black     $light_gray $gray       $black
 client.urgent           $red       $black     $white      $red        $black
 client.placeholder      $black     $black     $white      $black      $black
+
+### i3 Bar
+bar {
+    status_command i3blocks
+
+    colors {
+        background         $black
+        statusline         $white
+        separator          $gray
+
+        focused_workspace  $blue      $cyan        $black
+        active_workspace   $gray      $cyan        $black
+        inactive_workspace $dark_gray $light_gray  $black
+        urgent_workspace   $red       $orange      $black
+    }
+
+    font pango:Hack Nerd Font Mono 12
+}
 
 
 ### AutoStarts
@@ -184,9 +183,6 @@ exec --no-startup-id nm-applet
 
 # transparent and more
 exec --no-startup-id picom --config ~/.config/picom.conf
-
-# wallpaper
-#exec --no-startup-id feh --bg-scale /path/to/image.jpg
 
 # terminal
 for_window [class="Alacritty"] move to scratchpad, scratchpad show
