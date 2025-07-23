@@ -13,8 +13,7 @@ set $fontsize 12
 ## apps
 set $terminal alacritty
 set $browser brave-browser
-set $launcer rofi -show drun -theme gruvbox-dark
-
+set $launcer dmenu_run
 
 ## commands
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -29,7 +28,7 @@ bindsym $mod+o exec $browser
 bindsym $mod+u exec $browser "https://chatgpt.com/?temporary-chat=true"
 bindsym $mod+y exec $browser "https://www.youtube.com/"
 bindsym $mod+Return exec $terminal
-bindsym $mod+slash exec $launcer
+bindsym $mod+slash exec --no-startup-id $launcer
 bindsym $mod+Shift+s exec --no-startup-id $screenshot_to_clipboard
 
 # scratchpad
