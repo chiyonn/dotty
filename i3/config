@@ -8,6 +8,7 @@ set $left h
 set $down j
 set $up k
 set $right l
+set $fontsize 12 
 
 ## apps
 set $terminal alacritty
@@ -19,7 +20,7 @@ set $launcer rofi -show drun -theme gruvbox-dark
 set $refresh_i3status killall -SIGUSR1 i3status
 set $screenshot_to_clipboard bash -c 'maim -s | xclip -selection clipboard -t image/png && notify-send "Screenshot copied"'
 
-font pango:monospace 8
+font pango:monospace $fontsize
 floating_modifier $mod
 tiling_drag modifier titlebar
 
@@ -162,7 +163,7 @@ bar {
         urgent_workspace   $red       $orange      $black
     }
 
-    font pango:Hack Nerd Font Mono 12
+    font pango:Hack Nerd Font Mono $fontsize
 }
 
 
