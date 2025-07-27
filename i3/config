@@ -113,6 +113,8 @@ mode "$mode_audio" {
 }
 
 mode "music" {
+    bindsym j exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    bindsym k exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
     bindsym n exec playerctl next
     bindsym p exec playerctl previous
     bindsym space exec playerctl play-pause
