@@ -188,3 +188,5 @@ exec --no-startup-id picom --config ~/.config/picom.conf
 for_window [class="Alacritty"] move to scratchpad, scratchpad show
 exec --no-startup-id alacritty
 
+for_window [class="Blueman-manager"] floating enable
+
