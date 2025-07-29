@@ -9,49 +9,76 @@ declare -A DEVICES=(
   [kb]="C4:C1:63:09:AA:4A|input|HHKB-Hybrid_1"
 )
 
-# ===== rofi wrapper =====
-rofi_dmenu() {
-  rofi -dmenu -i -p "$1"
-}
-
 # ===== Select action =====
-action=$(printf "connect\ndisconnect" | rofi_dmenu "Action:")
+action=$(printf "connect\ndisconnect\nprofile" | rofi -dmenu -p "Action:")
 [[ -z "$action" ]] && exit 0
 
-# ===== Select device =====
+if [[ "$action" == "profile" ]]; then
+  # === Find currently connected audio device ===
+  connected_device=""
+  for key in "${!DEVICES[@]}"; do
+    IFS='|' read -r mac category name <<< "${DEVICES[$key]}"
+    if [[ "$category" == "audio" ]]; then
+      if bluetoothctl info "$mac" | grep -q "Connected: yes"; then
+        connected_device="$mac"
+        break
+      fi
+    fi
+  done
+
+  if [[ -z "$connected_device" ]]; then
+    notify-send "No connected audio device found"
+    exit 1
+  fi
+
+  # === Get the card name from pactl ===
+  card=$(pactl list cards short | grep "${connected_device//:/_}" | awk '{print $2}')
+  if [[ -z "$card" ]]; then
+    notify-send "No matching PulseAudio card for $connected_device"
+    exit 1
+  fi
+
+  # === Choose profile ===
+  profile=$(printf "a2dp-sink (高音質音声専用)\nheadset-head-unit-msbc (マイク対応)" | rofi -dmenu -p "Select profile:")
+  [[ -z "$profile" ]] && exit 0
+
+  # === Map to actual profile name ===
+  if [[ "$profile" == *a2dp-sink* ]]; then
+    profile_name="a2dp-sink"
+  elif [[ "$profile" == *msbc* ]]; then
+    profile_name="headset-head-unit-msbc"
+  else
+    notify-send "Unknown profile selected"
+    exit 1
+  fi
+
+  # === Apply profile ===
+  pactl set-card-profile "$card" "$profile_name"
+  notify-send "Bluetooth profile set to: $profile_name"
+  exit 0
+fi
+
+# ===== Show device options =====
 device_options=()
 for key in "${!DEVICES[@]}"; do
   IFS='|' read -r _ _ name <<< "${DEVICES[$key]}"
   device_options+=("$key $name")
 done
 
-choice=$(printf "%s\n" "${device_options[@]}" | rofi_dmenu "$action device:")
+choice=$(printf "%s\n" "${device_options[@]}" | rofi -dmenu -p "$action device:")
 [[ -z "$choice" ]] && exit 0
 
 device_id="${choice%% *}"
 device_info="${DEVICES[$device_id]}"
 IFS='|' read -r TARGET_MAC CATEGORY DEVICE_NAME <<< "$device_info"
 
-# ===== Connect logic =====
+# ===== Perform connect/disconnect =====
 if [[ "$action" == "connect" ]]; then
-  # Disconnect others in same category
   for key in "${!DEVICES[@]}"; do
     IFS='|' read -r mac cat _ <<< "${DEVICES[$key]}"
     [[ "$cat" == "$CATEGORY" && "$mac" != "$TARGET_MAC" ]] && bluetoothctl disconnect "$mac" >/dev/null
   done
-
   bluetoothctl connect "$TARGET_MAC"
-
-  # Wait briefly for connection to stabilize
-  sleep 2
-
-  # Detect card name (bluez_card.XX_XX_XX_XX_XX_XX)
-  CARD=$(pactl list cards short | grep "$TARGET_MAC" | awk '{print $2}')
-  if [[ -n "$CARD" ]]; then
-    profile=$(printf "a2dp-sink\nheadset-head-unit-msbc" | rofi_dmenu "Profile for $DEVICE_NAME:")
-    [[ -n "$profile" ]] && pactl set-card-profile "$CARD" "$profile"
-  fi
-
 else
   bluetoothctl disconnect "$TARGET_MAC"
 fi
