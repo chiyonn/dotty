@@ -120,15 +120,15 @@
     "name": "yay.space",
     "sections": [
       {
-        "code": ":root {\n  --c-border: rgba(100, 100, 100, .5);\n}\n\n.Main__content *:not(a) {\n  color: rgb(220, 220, 220);\n}\n\n.Main__content,\n.PostShareablePost {\n  background: rgb(20, 20, 20);\n}\n.Header,\n.Box,\n.PostBox__wrapper {\n  background: rgb(40, 40, 40);\n}\n\n#search_input {\n  background: rgba(255, 255, 255, .1);\n}\n\n.AppDownloadAds.Sidebar__ads,\n.AnnouncementBanner,\n.Heart__circle,\n.Heart__circle2 {\n  display: none;\n}\n\n.PostActions__a--reply,\n.PostActions__a--reposts {\n  filter: invert(100%);\n  -webkit-filter: invert(100%);\n}",
+        "code": ":root {\n  --c-border: rgba(100, 100, 100, .5);\n}\n\n.Main__content *:not(a),\n.Box__nav__a {\n  color: rgb(220, 220, 220);\n}\n\n.Main__content,\n.PostShareablePost {\n  background: rgb(20, 20, 20);\n}\n.Header,\n.Box,\n.PostBox__wrapper {\n  background: rgb(40, 40, 40);\n}\n\n#search_input {\n  background: rgba(255, 255, 255, .1);\n}\n\n.AppDownloadAds.Sidebar__ads,\n.AnnouncementBanner,\n.Heart__circle,\n.Heart__circle2 {\n  display: none;\n}\n\n.PostActions__a--reply,\n.PostActions__a--reposts {\n  filter: invert(100%);\n  -webkit-filter: invert(100%);\n}",
         "urlPrefixes": [
           "https://yay.space"
         ]
       }
     ],
-    "updateDate": 1751927546091,
+    "updateDate": 1753495095787,
     "_id": "1f5a426b-57dd-497c-a75c-873728dc244f",
-    "_rev": 1751927546092,
+    "_rev": 1753495095787,
     "id": 1,
     "preferScheme": "dark"
   }
