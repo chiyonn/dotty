@@ -8,7 +8,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $fontsize 12 
+set $fontsize 11 
 
 ## apps
 set $terminal alacritty
