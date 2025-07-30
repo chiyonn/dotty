@@ -192,4 +192,4 @@ for_window [class="Alacritty"] move to scratchpad, scratchpad show
 exec --no-startup-id alacritty
 
 for_window [class="Blueman-manager"] floating enable
-
+for_window [class="Pavucontrol"] floating enable
