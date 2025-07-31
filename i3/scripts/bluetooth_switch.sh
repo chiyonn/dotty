@@ -38,19 +38,24 @@ if [[ "$action" == "profile" ]]; then
     exit 1
   fi
 
-  # === Choose profile ===
-  profile=$(printf "a2dp-sink (高音質音声専用)\nheadset-head-unit-msbc (マイク対応)" | rofi -dmenu -p "Select profile:")
+  # === Get available profiles ===
+  available_profiles=$(pactl list cards | awk -v card="$card" '
+    $1 == "Card" && $2 == "#" { in_card = 0 }
+    $1 == "Name:" && $2 == card { in_card = 1 }
+    in_card && $1 == "Profiles:" { in_profiles = 1; next }
+    in_profiles && $1 == "Active" { exit }
+    in_profiles && in_card && /^[ \t]/ {
+      sub(/^[ \t]+/, "", $0)
+      split($0, a, /:[ \t]+/)
+      printf "%s (%s)\n", a[1], a[2]
+    }
+  ')
+
+  profile=$(printf "%s\n" "$available_profiles" | rofi -dmenu -p "Select profile:")
   [[ -z "$profile" ]] && exit 0
 
-  # === Map to actual profile name ===
-  if [[ "$profile" == *a2dp-sink* ]]; then
-    profile_name="a2dp-sink"
-  elif [[ "$profile" == *msbc* ]]; then
-    profile_name="headset-head-unit-msbc"
-  else
-    notify-send "Unknown profile selected"
-    exit 1
-  fi
+  # === Extract actual profile ID
+  profile_name=$(echo "$profile" | cut -d' ' -f1)
 
   # === Apply profile ===
   pactl set-card-profile "$card" "$profile_name"
