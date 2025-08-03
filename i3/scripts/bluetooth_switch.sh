@@ -84,6 +84,25 @@ if [[ "$action" == "connect" ]]; then
     [[ "$cat" == "$CATEGORY" && "$mac" != "$TARGET_MAC" ]] && bluetoothctl disconnect "$mac" >/dev/null
   done
   bluetoothctl connect "$TARGET_MAC"
+
+  # Wait for PulseAudio to register the new sink
+  sleep 2
+
+  # Get the sink name for the connected device
+  SINK_NAME=$(pactl list short sinks | grep "${TARGET_MAC//:/_}" | awk '{print $2}')
+
+  if [[ -n "$SINK_NAME" ]]; then
+    pactl set-default-sink "$SINK_NAME"
+
+    # Move existing audio streams to the new sink
+    while read -r stream_id; do
+      pactl move-sink-input "$stream_id" "$SINK_NAME"
+    done < <(pactl list short sink-inputs | awk '{print $1}')
+
+    notify-send "Default sink set to $SINK_NAME"
+  else
+    notify-send "Failed to find sink for $DEVICE_NAME"
+  fi
 else
   bluetoothctl disconnect "$TARGET_MAC"
 fi
