@@ -33,6 +33,7 @@ alias tnew="tmux new-session -s"
 alias activate="source ./.venv/bin/activate"
 
 # for Git
+alias gb="git branch"
 alias gs="git status"
 alias ga="git add"
 alias gd="git diff"
