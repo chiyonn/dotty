@@ -13,7 +13,8 @@ set $launcer rofi -show drun
 
 ## commands
 set $refresh_i3status killall -SIGUSR1 i3status
-set $screenshot_to_clipboard bash -c 'maim -s | xclip -selection clipboard -t image/png && notify-send "Screenshot copied"'
+set $screenshot bash -c 'mkdir -p ~/Pictures/Screenshots && maim -s | tee ~/Pictures/Screenshots/screenshot_$(date +"%Y-%m-%d_%H-%M-%S").png | xclip -selection clipboard -t image/png && notify-send "Screenshot saved and copied"'
+
 
 font pango:monospace $fontsize
 floating_modifier $mod
@@ -26,7 +27,7 @@ bindsym $mod+y exec $browser "https://www.youtube.com/"
 bindsym $mod+d exec /home/chiyonn/.dotty/i3/scripts/bluetooth_switch.sh
 bindsym $mod+Return exec $terminal
 bindsym $mod+slash exec --no-startup-id $launcer
-bindsym $mod+Shift+s exec --no-startup-id $screenshot_to_clipboard
+bindsym $mod+Shift+s exec --no-startup-id $screenshot
 
 # scratchpad
 bindsym $mod+space [class="Alacritty"] scratchpad show
@@ -148,6 +149,7 @@ client.placeholder      $black     $black     $white      $black      $black
 
 ### i3 Bar
 bar {
+
     status_command i3blocks
 
     colors {
