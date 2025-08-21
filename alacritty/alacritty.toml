@@ -1,0 +1,6 @@
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+size = 14.0
+
+[terminal.shell]
+program = "/bin/zsh"
