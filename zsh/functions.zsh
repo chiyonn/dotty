@@ -2,8 +2,6 @@
 edit() {
   typeset -A EDIT_CONFIGS
   EDIT_CONFIGS=(
-    [yabai]="$HOME/.config/yabai/yabairc"
-    [skhd]="$HOME/.config/skhd/skhdrc"
     [zshrc]="$HOME/.config/zsh/.zshrc"
     [aliases]="$HOME/.config/zsh/aliases.zsh"
   )
