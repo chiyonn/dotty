@@ -13,3 +13,5 @@ alias gp='git push'
 
 alias v=nvim
 alias t=tmux
+
+alias attach="tmux attach -t"
