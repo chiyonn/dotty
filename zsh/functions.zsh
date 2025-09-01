@@ -70,3 +70,44 @@ edit() {
     echo "✓ Successfully saved $filepath"
   fi
 }
+
+# zk wrapper function to cd to notebook dir before opening editor
+zk() {
+  # Check if any of the subcommands will open an editor
+  local will_open_editor=false
+  local args=("$@")
+  
+  for arg in "${args[@]}"; do
+    case "$arg" in
+      edit|new)
+        will_open_editor=true
+        break
+        ;;
+    esac
+  done
+  
+  # If interactive flag is present, editor will be opened
+  if [[ " ${args[@]} " =~ " -i " ]] || [[ " ${args[@]} " =~ " --interactive " ]]; then
+    will_open_editor=true
+  fi
+  
+  if [[ "$will_open_editor" == true ]] && [[ -n "$ZK_NOTEBOOK_DIR" ]]; then
+    # Save current directory
+    local current_dir=$(pwd)
+    
+    # Change to notebook directory
+    cd "$ZK_NOTEBOOK_DIR"
+    
+    # Run the actual zk command
+    command zk "$@"
+    local exit_code=$?
+    
+    # Return to original directory
+    cd "$current_dir"
+    
+    return $exit_code
+  else
+    # Run zk command normally if not opening editor or ZK_NOTEBOOK_DIR not set
+    command zk "$@"
+  fi
+}
