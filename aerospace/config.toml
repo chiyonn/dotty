@@ -108,7 +108,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-e = 'exec-and-forget open -a Finder'  # Open Finder
     alt-o = 'exec-and-forget open -n -a "Brave Browser"'  # Open browser
     alt-u = 'exec-and-forget open -a "Brave Browser" "https://chatgpt.com/?temporary-chat=true"'  # ChatGPT
-    alt-y = 'exec-and-forget open -a "Brave Browser" "https://www.youtube.com/"'  # YouTube
     alt-i = 'exec-and-forget open -a "System Settings"'  # System Settings
     alt-enter = 'exec-and-forget open -n -a Alacritty'  # Terminal
     alt-slash = 'exec-and-forget open -a Raycast'  # App launcher (Raycast is macOS equivalent of rofi)
