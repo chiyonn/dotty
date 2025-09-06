@@ -15,3 +15,6 @@ alias v=nvim
 alias t=tmux
 
 alias attach="tmux attach -t"
+
+alias activate="source ./.venv/bin/activate"
+
