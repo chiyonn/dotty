@@ -23,22 +23,28 @@ git checkout linux
 ## Directory Structure
 
 ### Common (main branch)
-- Git configurations
-- Shell aliases and functions
+- `alacritty/` - Terminal emulator (TOML format)
+- `.gitignore` - Git ignore rules
 - This README
 
 ### macOS-specific (macos branch)
 - `aerospace/` - Window manager
 - `karabiner/` - Keyboard customization
-- `alacritty/` - Terminal emulator (TOML format)
 - `zsh/` - macOS-specific shell configs
+- `beets/` - Music library management
+- `btop/` - System monitor
+- `gh/` - GitHub CLI
+- `mise/` - Development environment manager
+- `raycast/` - Launcher app scripts
 
 ### Linux-specific (linux branch)
 - `i3/` - i3 window manager
 - `sway/` - Wayland compositor
 - `waybar/` - Status bar
 - `wofi/` - Application launcher
-- `alacritty/` - Terminal emulator (YAML format)
+- `bash/` - Bash configurations
+- `tmux/` - Terminal multiplexer
+- `xremap/` - Key remapping
 
 ## Syncing Changes
 
