@@ -111,3 +111,9 @@ zk() {
     command zk "$@"
   fi
 }
+
+# todo command - runs task with current directory name as project
+todo() {
+  local project_name="${PWD##*/}"
+  task project:"$project_name" "$@"
+}
