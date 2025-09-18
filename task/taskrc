@@ -1,13 +1,8 @@
 # [Created by task 3.4.1 8/23/2025 10:31:23]
-data.location=/Users/chiyonn/.local/share/task
+# Common taskwarrior configuration for all platforms
+data.location=~/.local/share/task
+hooks.location=~/.config/task/hooks
 news.version=3.4.1
-
-# To use the default location of the XDG directories,
-# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
-
-#data.location=~/.local/share/task
-#hooks.location=~/.config/task/hooks
-
 # Color theme (uncomment one to use)
 #include light-16.theme
 #include light-256.theme
@@ -25,6 +20,7 @@ news.version=3.4.1
 #include solarized-light-256.theme
 #include no-color.theme
 
+# Server synchronization settings
 sync.server.url=http:\/\/vp-tw-svr-01.voxon.lan:8443
 sync.server.client_id=A3CF2BE4-3214-450A-A5B1-7FD40C751E96
 sync.server.encryption_secret=SWcyrJ5FhWZop4zxHyh7KTbZuh4Hje2leZJwrZbbWys=
