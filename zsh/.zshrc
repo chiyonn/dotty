@@ -7,8 +7,6 @@ fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export EDITOR=nvim
-export LANG=en_US.UTF-8
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CONFIG_DIR="$HOME/.config/zsh"
 
