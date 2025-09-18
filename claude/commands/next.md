@@ -18,7 +18,8 @@ Analyze GitHub Project TODO issues and recommend the most important task to work
    - Use `gh project list --owner <owner>` or repository-specific projects
 
 3. **Fetch TODO issues**:
-   - Query project items with TODO status
+   - Query project items with status = "Todo" or "TODO" (case-insensitive)
+   - Filter only unassigned or self-assigned issues
    - Get issue details including:
      - Title and description
      - Labels (priority, bug, feature, etc.)
@@ -84,13 +85,13 @@ PROJECTS=$(gh project list --owner $OWNER --format json)
 
 # 3. For each project, get TODO items
 for PROJECT_ID in $(echo $PROJECTS | jq -r '.[].number'); do
-    # Get project items with TODO status
+    # Get project items with TODO status only
     gh project item-list $PROJECT_ID --owner $OWNER --format json | \
-    jq '.items[] | select(.status == "Todo" or .status == "TODO")'
+    jq '.items[] | select(.status == "Todo" or .status == "TODO") | select(.assignees == null or .assignees == [] or (.assignees | map(.login) | contains(["@me"])))'
 done
 
-# 4. Get issue details for each TODO
-gh issue list --state open --label "todo" --json number,title,labels,createdAt,body
+# 4. Get issue details for each TODO (open issues only)
+gh issue list --state open --json number,title,labels,createdAt,body,assignees
 
 # 5. Analyze and prioritize
 # Implementation of scoring logic

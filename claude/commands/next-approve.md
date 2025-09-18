@@ -21,7 +21,6 @@ Start working on the recommended issue from /next by updating its status and cre
 3. **Update issue status**:
    - Change issue status from "Todo" to "In Progress" in GitHub Project
    - Assign yourself to the issue if not already assigned
-   - Add a comment indicating work has started
 
 4. **Create feature branch**:
    - Generate branch name from issue number and title
@@ -50,7 +49,6 @@ ISSUE=$(gh issue view $ISSUE_NUMBER --json title,number,body,labels)
 
 # 4. Update issue status in project
 gh issue edit $ISSUE_NUMBER --add-assignee @me
-gh issue comment $ISSUE_NUMBER --body "🚀 Starting work on this issue"
 
 # Update project status (requires project ID)
 gh project item-edit --id <item-id> --field-id <status-field> --project-id <project-id> --value "In Progress"
