@@ -1,5 +1,11 @@
 # Common aliases for both macOS and Linux
 
+# Linux-specific ls aliases
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -A'
+alias lla='ls -lha'
+
 # Git aliases
 alias gb='git branch'
 alias gl='git log'

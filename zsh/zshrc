@@ -7,7 +7,13 @@ zstyle :compinstall filename '/home/chiyonn/.zshrc'
 autoload -Uz compinit
 compinit
 
-### Aliases
+# Load common zsh configuration
+ZSH_CONFIG_DIR="$HOME/.config/zsh"
+for config in exports aliases functions; do
+  [[ -f "$ZSH_CONFIG_DIR/$config.zsh" ]] && source "$ZSH_CONFIG_DIR/$config.zsh"
+done
+
+### Additional aliases from .aliases (if exists)
 ALIASES_FILE=$HOME/.aliases
 if [ -f "$ALIASES_FILE" ]; then
     source "$ALIASES_FILE"
