@@ -4,4 +4,4 @@ size = 14.0
 
 [terminal.shell]
 program = "/bin/zsh"
-args = ["-c", "tmux new-session -A -s home"]
+args = ["-c", "tmux new-session -A -s home; exec zsh"]
