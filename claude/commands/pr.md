@@ -22,8 +22,8 @@ Create a pull request by pushing the current feature branch to remote and automa
 
 3. **Sync with upstream**:
    - Fetch latest changes from origin
-   - Check if local branch is behind remote main/master
-   - Optionally rebase or merge latest changes
+   - Check if local branch is behind remote dev (default) or main/master
+   - Optionally rebase or merge latest changes from dev branch
 
 4. **Extract issue information**:
    - Look for issue number in branch name (e.g., feature/123-add-auth)
@@ -43,6 +43,7 @@ Create a pull request by pushing the current feature branch to remote and automa
      - Testing checklist
      - Screenshots if UI changes
    - Use `gh pr create` command with appropriate flags
+   - Target branch should be `dev` by default (use `--base dev`)
    - Set reviewers if specified in CODEOWNERS or team conventions
 
 7. **Post-creation tasks**:
@@ -64,13 +65,14 @@ BRANCH=$(git branch --show-current)
 
 # 3. Sync with upstream
 git fetch origin
-git rebase origin/main  # or merge
+git rebase origin/dev  # default target branch
 
 # 4. Push to remote
 git push -u origin $BRANCH
 
-# 5. Create PR with issue linking
+# 5. Create PR with issue linking (targeting dev branch)
 gh pr create \
+  --base dev \
   --title "feat: add user authentication" \
   --body "## Summary
   Add JWT-based authentication system
