@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/Users/chiyonn/.config/karabiner/automatic_backups/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
