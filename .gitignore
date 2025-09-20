@@ -2,3 +2,8 @@ nvim/
 
 # Karabiner automatic backups
 karabiner/automatic_backups/
+# GitHub CLI
+gh/
+
+# Go telemetry
+go/
